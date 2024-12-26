@@ -66,8 +66,8 @@ class _Create04TaskWidgetState extends State<Create04TaskWidget> {
               Container(
                 width: 465.0,
                 height: 28.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                decoration: const BoxDecoration(
+                  color: Color(0x00FFFFFF),
                 ),
               ),
               Align(
@@ -99,8 +99,8 @@ class _Create04TaskWidgetState extends State<Create04TaskWidget> {
               Container(
                 width: 465.0,
                 height: 28.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                decoration: const BoxDecoration(
+                  color: Color(0x00E0E3E7),
                 ),
               ),
             ].divide(const SizedBox(height: 4.0)),
@@ -173,7 +173,7 @@ class _Create04TaskWidgetState extends State<Create04TaskWidget> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
-                        color: Color(0xFF6F61EF),
+                        color: Color(0xFFE5E7EB),
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(12.0),
@@ -304,7 +304,7 @@ class _Create04TaskWidgetState extends State<Create04TaskWidget> {
                   textInputAction: TextInputAction.next,
                   obscureText: false,
                   decoration: InputDecoration(
-                    isDense: true,
+                    isDense: false,
                     labelText: 'Amount',
                     labelStyle:
                         FlutterFlowTheme.of(context).headlineMedium.override(
@@ -362,7 +362,7 @@ class _Create04TaskWidgetState extends State<Create04TaskWidget> {
                   maxLength: 7,
                   maxLengthEnforcement: MaxLengthEnforcement.enforced,
                   keyboardType: TextInputType.number,
-                  cursorColor: FlutterFlowTheme.of(context).primaryText,
+                  cursorColor: FlutterFlowTheme.of(context).primaryBackground,
                   validator:
                       _model.amountTextControllerValidator.asValidator(context),
                   inputFormatters: [
