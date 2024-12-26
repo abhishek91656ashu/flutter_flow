@@ -82,6 +82,7 @@ class _Create04TaskWidgetState extends State<Create04TaskWidget> {
                         'Hey',
                         style: FlutterFlowTheme.of(context).titleLarge.override(
                               fontFamily: 'Inter Tight',
+                              color: FlutterFlowTheme.of(context).primary,
                               letterSpacing: 0.0,
                             ),
                       ),
@@ -89,6 +90,7 @@ class _Create04TaskWidgetState extends State<Create04TaskWidget> {
                         FFAppState().username,
                         style: FlutterFlowTheme.of(context).titleLarge.override(
                               fontFamily: 'Inter Tight',
+                              color: FlutterFlowTheme.of(context).primary,
                               letterSpacing: 0.0,
                             ),
                       ),
