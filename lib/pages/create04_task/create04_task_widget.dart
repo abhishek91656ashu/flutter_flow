@@ -436,28 +436,47 @@ class _Create04TaskWidgetState extends State<Create04TaskWidget> {
                       const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      context.pushNamed(
-                        'qrpage',
-                        queryParameters: {
-                          'aadharNumber': serializeParam(
-                            int.tryParse(
-                                _model.aadharNumberTextController.text),
-                            ParamType.int,
-                          ),
-                          'amount': serializeParam(
-                            int.tryParse(_model.amountTextController.text),
-                            ParamType.int,
-                          ),
-                          'bankName': serializeParam(
-                            _model.bankNameValue,
-                            ParamType.String,
-                          ),
-                          'ifsccode': serializeParam(
-                            _model.ifsccodeTextController.text,
-                            ParamType.String,
-                          ),
-                        }.withoutNulls,
-                      );
+                      if (_model.amountTextController.text == '1000') {
+                        context.pushNamed(
+                          'qrpage',
+                          queryParameters: {
+                            'aadharNumber': serializeParam(
+                              int.tryParse(
+                                  _model.aadharNumberTextController.text),
+                              ParamType.int,
+                            ),
+                            'amount': serializeParam(
+                              int.tryParse(_model.amountTextController.text),
+                              ParamType.int,
+                            ),
+                            'bankName': serializeParam(
+                              _model.bankNameValue,
+                              ParamType.String,
+                            ),
+                            'ifsccode': serializeParam(
+                              _model.ifsccodeTextController.text,
+                              ParamType.String,
+                            ),
+                          }.withoutNulls,
+                        );
+                      } else {
+                        await showDialog(
+                          context: context,
+                          builder: (alertDialogContext) {
+                            return AlertDialog(
+                              title: const Text('Alert'),
+                              content: const Text('Use multiple of \"100\"'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: const Text('Ok'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      }
                     },
                     text: 'Generate QR',
                     options: FFButtonOptions(
